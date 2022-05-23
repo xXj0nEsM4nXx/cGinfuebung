@@ -2,8 +2,8 @@ import pgzrun
 import random 
 
 spaceship = Actor('playership1_red')
-spaceship.x = 500
-spaceship.y = 500
+spaceship.x = 400
+spaceship.y = 300
 gem = Actor('gemblue')
 
 def draw():
@@ -20,6 +20,12 @@ def on_key_down(key):
         spaceship.y -= 30
     elif key == keys.DOWN:
         spaceship.y += 30
+
+
+def berühren ():
+   if spaceship.colliderect(gem):
+        gem.x = randint(0, WIDTH)
+        gem.y = randint(0,HEIGHT)
 
 WIDTH = 800
 HEIGHT = 600
