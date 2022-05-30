@@ -27,6 +27,11 @@ def berühren ():
         gem.x = randint(0, WIDTH)
         gem.y = randint(0,HEIGHT)
 
+def update():
+    gem.y += 5
+
+
+
 WIDTH = 800
 HEIGHT = 600
 
