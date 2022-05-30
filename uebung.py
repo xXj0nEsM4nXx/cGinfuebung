@@ -9,15 +9,15 @@ gem.x = random.randint(0,600)
 gem.y = 0
 
 def reset():
-    if gem.y == 800:
+    if  gem.y == 800:
         gem.y = 0 
-
-
 
 def draw():
     screen.clear()
+    screen.blit('galaxy',(0,0))
     spaceship.draw()
     gem.draw()
+
 
 def on_key_down(key):
     if key == keys.RIGHT:
@@ -32,10 +32,12 @@ def on_key_down(key):
 def berühren ():
    if spaceship.colliderect(gem):
         gem.x = random.randint(0, WIDTH)
-        gem.y == 20
+        gem.y = 20
 
 def update():
     gem.y += 2
+    berühren()
+    reset()
 
 WIDTH = 800
 HEIGHT = 600
